@@ -107,6 +107,9 @@ export default class StyleSheet {
   }
 
   insertRule(rule, index) {
+    if(!rule){
+      return this._rulesCount
+    }
     invariant(isString(rule), '`insertRule` accepts only strings')
 
     if (!this._isBrowser) {
